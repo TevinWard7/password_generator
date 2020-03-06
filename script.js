@@ -8,7 +8,16 @@ function writePassword() {
   //passwordText.value = password;
 
   //my code
-  var passwordLength = prompt("How long do you want your password?")
+  var passwordLength = prompt("How long do you want your password? (Must choose 8-12 characters")
+
+  //conditions
+  if (passwordLength > 8 || passwordLength < 128) {
+    var passwordCase = prompt("W")
+  }
+
+  else {
+    alert("Must choose 8-12 characters")
+  }
 }
 
 // Add event listener to generate button
