@@ -3,26 +3,38 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  //var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
-  //passwordText.value = password;
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 
-  //my code
-  var passwordLength = prompt("How long do you want your password? (Must choose 8-12 characters")
+function passwordSelection() {
 
-  //conditions
-  if (passwordLength > 8 || passwordLength < 128) {
-    var passwordCase = prompt("W")
+  //Variables
+  var length = prompt("How many characters? (enter number)");
+  var lowerCase;
+  var upperCase;
+  var numeric;
+  var specialCharacters;
+
+
+  //Conditions 
+  if (length > 8 && length < 128) {
+    lowerCase = prompt("Want lower case characters?")
+
+    if (lowerCase === "yes" || lowerCase === "no") {
+      upperCase = prompt("Want uppercase characters?")
+    }
+
+    else {
+      alert("Must enter yes or no")
+    }
   }
 
   else {
-    alert("Must choose 8-12 characters")
+    alert("Must enter number 8-128")
   }
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
-
-
+generateBtn.addEventListener("click", passwordSelection);
